@@ -79,8 +79,8 @@ botui.message.add({
     });
 });
 
-var chatnum=response.length
-var event = new CustomEvent('myEvent', { detail: chatnum })
-window.parent.document.dispatchEvent(event)
+//var chatnum=response.length
+//var event = new CustomEvent('myEvent', { detail: chatnum })
+//window.parent.document.dispatchEvent(event)
 
-// window.parent.postMessage(response, 'https://gatech.co1.qualtrics.com/jfe/preview/SV_aVjrEOH9mPRr7QF?Q_CHL=preview&Q_SurveyVersionID=current');
+window.parent.postMessage(response, 'https://gatech.co1.qualtrics.com/jfe/preview/SV_aVjrEOH9mPRr7QF?Q_CHL=preview&Q_SurveyVersionID=current');
