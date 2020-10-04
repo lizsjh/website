@@ -83,4 +83,5 @@ botui.message.add({
 //var event = new CustomEvent('myEvent', { detail: chatnum })
 //window.parent.document.dispatchEvent(event)
 
-window.parent.postMessage(response, "*");
+var myJSON = JSON.stringify(response);
+window.parent.postMessage(myJSON, "*");
