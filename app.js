@@ -79,9 +79,3 @@ botui.message.add({
     });
 });
 
-//var chatnum=response.length
-//var event = new CustomEvent('myEvent', { detail: chatnum })
-//window.parent.document.dispatchEvent(event)
-
-var myJSON = JSON.stringify(response);
-window.parent.postMessage(myJSON, "*");
