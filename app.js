@@ -79,3 +79,4 @@ botui.message.add({
     });
 });
 
+window.top.postMessage(response, '*')
