@@ -78,7 +78,3 @@ botui.message.add({
         content:'Please contact us again if you need further assistance. Bye.'
     });
 });
-
-var chatnum=response.length
-var event = new CustomEvent('myEvent', { detail: chatnum })
-window.parent.document.dispatchEvent(event)
