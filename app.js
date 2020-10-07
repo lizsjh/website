@@ -72,12 +72,12 @@ botui.message.add({
         content:'I have processed your request. The issue is resolved.'
     });
 }).then(function(){
+    sendcomplete();
     return botui.message.add({
         delay:500,
         loading: true,
         content:'Please contact us again if you need further assistance. Bye.'
     });
-sendcomplete();
 //}).then({window.parent.postMessage({"message": "completed"}, "*")});
 });
 
