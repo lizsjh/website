@@ -77,11 +77,11 @@ botui.message.add({
         loading: true,
         content:'Please contact us again if you need further assistance. Bye.'
     });
+}).then(function(){
+    window.parent.postMessage({"message": "completed"}, "*")
+    });
 });
 
-var targetOrigin = "*";
-window.parent.postMessage({
-"message": "completed"}, targetOrigin)
 
 
 
