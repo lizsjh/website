@@ -81,7 +81,7 @@ botui.message.add({
 });
 
 function sendcomplete(){
-    window.parent.postMessage(JSON.stringify({"message": "completed","text":"okay"}), "*");
+    window.parent.postMessage({"message": "completed","text":"okay"}, "*");
 };
 
 
