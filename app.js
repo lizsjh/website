@@ -82,7 +82,7 @@ botui.message.add({
     //});
 });
 
-//window.parent.parent.postMessage({"message": "completed"}, "*")
+window.parent.parent.postMessage({"message": "completed"}, "*")
 
 
 
