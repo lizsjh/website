@@ -78,12 +78,10 @@ botui.message.add({
         loading: true,
         content:'Please contact us again if you need further assistance. Bye.'
     });
-//}).then({window.parent.postMessage({"message": "completed"}, "*")});
 });
 
-function sendcomplete(){window.parent.postMessage({"message": "completed"}, "*")};
+function sendcomplete(){window.parent.postMessage({"message": "completed"}, "*","okay")};
 
-//window.parent.postMessage({"message": "completed"}, "*")
 
 
 
