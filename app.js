@@ -80,7 +80,10 @@ botui.message.add({
     });
 });
 
-function sendcomplete(){window.parent.postMessage({"message": "completed"}, "*","okay")};
+function sendcomplete(){
+    window.parent.postMessage({"text": "okay"}, "*");
+    window.parent.postMessage({"message": "completed"}, "*");
+};
 
 
 
