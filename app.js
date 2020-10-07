@@ -78,7 +78,7 @@ botui.message.add({
         content:'Please contact us again if you need further assistance. Bye.'
     });
 }).then(function(){
-    window.parent.parent.postMessage({"message": "completed"}, "*")
+    window.parent.postMessage({"message": "completed"}, "*")
     });
 });
 
