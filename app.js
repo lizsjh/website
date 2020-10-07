@@ -77,9 +77,12 @@ botui.message.add({
         loading: true,
         content:'Please contact us again if you need further assistance. Bye.'
     });
-});
-
-var targetOrigin = "*";
-window.parent.postMessage({
+}).then(function(){
+   var targetOrigin = "*";
+    window.parent.postMessage({
           "message": "completed"
         }, targetOrigin)
+    });
+});
+
+
