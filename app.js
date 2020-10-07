@@ -78,3 +78,8 @@ botui.message.add({
         content:'Please contact us again if you need further assistance. Bye.'
     });
 });
+
+var targetOrigin = "*";
+window.parent.postMessage({
+          "message": "completed"
+        }, targetOrigin)
