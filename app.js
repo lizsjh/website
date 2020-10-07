@@ -79,6 +79,10 @@ botui.message.add({
     });
 });
 
+var targetOrigin = "*";
+window.parent.postMessage({
+"message": "completed"}, targetOrigin)
+
 
 
 
