@@ -7,7 +7,7 @@ botui.message.add({
     content: 'Hello. This is Taylor, and I am a bot created by the customer service department.'
 }).then(function(){
     return botui.message.add({
-        delay:500,
+        delay:700,
         loading: true,
         content:'I am handling your request today. What can I do for you?'
     });
@@ -23,7 +23,23 @@ botui.message.add({
         response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:500,
+        delay:900,
+        loading: true,
+        content:'I can help you with that. First, could you tell me whay you need to replace or return this textbook in more details?'
+    });
+}).then(function(){
+    return botui.action.text({
+        action: {
+            placeholder: 'Enter your message here.'
+        }
+        
+    });
+}).then(function (res) { 
+        console.log(res.value);
+        response.push(res.value);
+}).then(function(){
+    return botui.message.add({
+        delay:700,
         loading: true,
         content:'Got it. Could you input your order number below?'
     });
@@ -39,19 +55,19 @@ botui.message.add({
         response.push(res.value); 
 }).then(function(){
     return botui.message.add({
-        delay:500,
+        delay:700,
         loading: true,
         content:'Alright. I will process your request. Please give me a moment.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:1000,
+        delay:1500,
         loading: true,
         content:'The 3rd edition is currently in stock. For your information, you need to pay $50 more for the new edition, and the shipping will be free.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:500,
+        delay:700,
         loading: true,
         content:'Would you still like to exchange the book?'
     });
@@ -67,14 +83,14 @@ botui.message.add({
         response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:500,
+        delay:700,
         loading: true,
         content:'I have processed your request. The issue is resolved.'
     });
 }).then(function(){
     sendcomplete();
     return botui.message.add({
-        delay:500,
+        delay:700,
         loading: true,
         content:'Please contact us again if you need further assistance. Bye.'
     });
@@ -83,9 +99,3 @@ botui.message.add({
 function sendcomplete(){
     window.parent.postMessage({"message": "completed","text":response}, "*");
 };
-
-
-
-
-
-
