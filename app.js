@@ -63,42 +63,7 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'The 3rd edition is currently in stock.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:700,
-        loading: true,
-        content:'For your information, shipping will be free, and you need to pay $50 more. Would you still like to exchange the book?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-    
-    });
-}).then(function (res) { 
-        console.log(res.value);
-        response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:700,
-        loading: true,
-        content:'Thanks. Please hold for a second.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:900,
-        loading: true,
-        content:'I have processed your request. The issue is resolved.'
-    });
-}).then(function(){
-    sendcomplete();
-    return botui.message.add({
-        delay:700,
-        loading: true,
-        content:'Please contact us again if you need further assistance. Bye.'
+        content:'We are currently experiencing a system error. Please contact us again later.'
     });
 });
 
