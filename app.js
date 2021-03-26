@@ -63,7 +63,13 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'The 3rd edition is currently in stock. For your information, shipping will be free, and you need to pay $50 more. Would you still like to exchange the book?'
+        content:'The 3rd edition is currently in stock.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:700,
+        loading: true,
+        content:'For your information, shipping will be free, and you need to pay $50 more. Would you still like to exchange the book?'
     });
 }).then(function(){
     return botui.action.text({
