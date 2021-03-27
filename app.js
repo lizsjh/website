@@ -18,25 +18,6 @@ botui.message.add({
         }
     
     });
-}).then(function (res) { 
-        console.log(res.value);
-        response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:900,
-        loading: true,
-        content:'I can help you with that. First, could you tell me why you need to replace or return this textbook in more details?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-            placeholder: 'Enter your message.'
-        }
-        
-    });
-}).then(function (res) { 
-        console.log(res.value);
-        response.push(res.value);
 }).then(function(){
     return botui.message.add({
         delay:700,
@@ -57,11 +38,11 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'Alright. I will process your request. Please give me a moment.'
+        content:'Alright. I am checking your order right now. Please give me a moment.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:700,
+        delay:900,
         loading: true,
         content:'We are currently experiencing a system error. Please contact us again later.'
     });
