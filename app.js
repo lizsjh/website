@@ -39,13 +39,14 @@ botui.message.add({
     response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:700,
+        delay:900,
         loading: true,
         content:'Alright. I am checking your order right now. Please give me a moment.'
     });
 }).then(function(){
+    sendcomplete();
     return botui.message.add({
-        delay:900,
+        delay:1200,
         loading: true,
         content:'We are currently experiencing a system error. Please contact us again later.'
     });
