@@ -25,15 +25,14 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'I can help you with that. First, could you tell me why you need to replace or return this textbook?'
+        content:'I can help you with that. First, could you tell me your order number?'
     });
 }).then(function(){
     return botui.action.text({
         action: {
           placeholder: 'Enter your message.'
         }
-    
-    });
+        });
 }).then(function (res) { 
     console.log(res.value);
     response.push(res.value);
@@ -41,7 +40,28 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'Got it. Could you input your order number below?'
+        content:'Got it. Please allow me few seconds for pulling up your order.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:900,
+        loading: true,
+        content:'Which item(s) is missing?'
+    });
+}).then(function(){
+    return botui.action.text({
+        action: {
+          placeholder: 'Enter your message.'
+        }
+        });
+}).then(function (res) { 
+    console.log(res.value);
+    response.push(res.value);
+}).then(function(){
+    return botui.message.add({
+        delay:800,
+        loading: true,
+        content:'Can you describe conditions of the rest of the items?'
     });
 }).then(function(){
     return botui.action.text({
@@ -57,19 +77,13 @@ botui.message.add({
     return botui.message.add({
         delay:900,
         loading: true,
-        content:'Alright. I am checking your order right now. Please give me a moment.'
+        content:'Thank you for telling me. Meanwhile, I’ve identified the problem: there was a miscommunication in the packaging process.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:1200,
+        delay:700,
         loading: true,
-        content:'I have pulled up your order. The 3rd edition is available, and you will be charged an additional $50.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:900,
-        loading: true,
-        content:'Meanwhile, is there anything else you need?'
+        content:'I can create a new order that will be delivered within a day, or I can refund for the missing item. What would you prefer?'
     });
 }).then(function(){
     return botui.action.text({
@@ -85,20 +99,20 @@ botui.message.add({
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'Okay. Please hold on for a moment.'
+        content:'Alright. I will process your request. Please hold on for a moment.'
     });
 }).then(function(){
     return botui.message.add({
         delay:1200,
         loading: true,
-        content:'I have processed your request. An email will be sent shortly about your new order.'
+        content:'I have processed your request. The issue is resolved'
     });
 }).then(function(){
     sendcomplete();
     return botui.message.add({
         delay:700,
         loading: true,
-        content:'The issue is resolved. Please contact us again if you need further assistance. Bye.'
+        content:'Please contact us again if you need further assistance. Bye.'
     });
 });
 
