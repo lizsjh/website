@@ -89,7 +89,13 @@ botui.message.add({
     return botui.message.add({
         delay:1800,
         loading: true,
-        content:'I have finished processing your request. Please make sure you return the older edition to us. Is there anything else you need?'
+        content:'I have finished processing your request.'
+    });
+}).then(function(){
+    return botui.message.add({
+        delay:1500,
+        loading: true,
+        content:'Please make sure you return the older edition to us. Is there anything else you need?'
     });
 }).then(function(){
     return botui.action.text({
