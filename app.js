@@ -60,13 +60,13 @@ botui.message.add({
     response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:3000,
+        delay:4000,
         loading: true,
         content:'Thank you for telling me. Meanwhile, I’ve identified the problem: there was a miscommunication in the packaging process.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:2500,
+        delay:4000,
         loading: true,
         content:'I can create a new order that will be delivered within a day. Is there anything else I can help you with?'
     });
