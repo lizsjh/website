@@ -28,7 +28,7 @@ botui.message.add({
         delay:4000,
         loading: true,
         photo: true,
-        content:'I can definitely resolve the issue. Could you tell me your order number?'
+        content:'I can definitely resolve the issue. What is your order number?'
     });
 }).then(function(){
     return botui.action.text({
