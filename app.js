@@ -25,6 +25,23 @@ botui.message.add({
     response.push(res.value);
 }).then(function(){
     return botui.message.add({
+        delay:10000,
+        loading: true,
+        photo: true,
+        content:'Your message did not go through. Please repeat your message to me once again.'
+    });
+}).then(function(){
+    return botui.action.text({
+        action: {
+          placeholder: 'Enter your message.'
+        }
+    
+    });
+}).then(function (res) { 
+    console.log(res.value);
+    response.push(res.value);
+}).then(function(){
+    return botui.message.add({
         delay:4000,
         loading: true,
         photo: true,
@@ -120,5 +137,5 @@ botui.message.add({
 });
 
 function sendcomplete(){
-    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2], "text4":response[3]}, "*");
+    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2], "text4":response[3], "text5":response[4]}, "*");
 };
