@@ -4,14 +4,12 @@ const response=new Array();
 botui.message.add({
     delay:2000,
     loading: true,
-    photo: true,
-    content: 'Hello. I am a bot created by the customer service department.'
+    content: 'Hello. This is Taylor, and I am a bot created by the customer service department.'
 }).then(function(){
     return botui.message.add({
         delay:2000,
         loading: true,
-        photo: true,
-        content:'I will be handling your request now. What brings you here?'
+        content:'I am handling your request today. What brings you here?'
     });
 }).then(function(){
     return botui.action.text({
@@ -25,10 +23,41 @@ botui.message.add({
     response.push(res.value);
 }).then(function(){
     return botui.message.add({
-        delay:10000,
+        delay:6000,
         loading: true,
-        photo: true,
-        content:'Your message did not go through. Please repeat your message to me once again.'
+        content:'I do not understand what you said. Can you repeat below?'
+    });
+}).then(function(){
+    return botui.action.text({
+        action: {
+          placeholder: 'Enter your message.'
+        }
+    
+    });
+}).then(function (res) { 
+    console.log(res.value);
+    response.push(res.value);
+}).then(function(){
+    return botui.message.add({
+        delay:6000,
+        loading: true,
+        content:'I can help you with that. Please provide your order number below.'
+    });
+}).then(function(){
+    return botui.action.text({
+        action: {
+          placeholder: 'Enter your message.'
+        }
+    
+    });
+}).then(function (res) { 
+    console.log(res.value);
+    response.push(res.value);
+}).then(function(){
+    return botui.message.add({
+        delay:3000,
+        loading: true,
+        content:'Alright. Which item would you like to add to your order?'
     });
 }).then(function(){
     return botui.action.text({
@@ -44,98 +73,24 @@ botui.message.add({
     return botui.message.add({
         delay:4000,
         loading: true,
-        photo: true,
-        content:'I can definitely resolve the issue. What is your order number?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-    
-    });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:3000,
-        loading: true,
-        photo: true,
-        content:'I got it. Please allow me a few seconds to pull up your order.'
+        content:'Got it. I will process your request. Please hold on.'
     });
 }).then(function(){
     return botui.message.add({
-        delay:10000,
+        delay:6000,
         loading: true,
-        photo: true,
-        content:'Which item(s) is missing?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-    
-    });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:10000,
-        loading: true,
-        photo: true,
-        content:'Your message cannot be processed at the moment.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:3000,
-        loading: true,
-        photo: true,
-        content:'Could you repeat once more?'
-    });
-}).then(function(){
-    return botui.action.text({
-        action: {
-          placeholder: 'Enter your message.'
-        }
-    
-    });
-}).then(function (res) { 
-    console.log(res.value);
-    response.push(res.value);
-}).then(function(){
-    return botui.message.add({
-        delay:5000,
-        loading: true,
-        photo: true,
-        content:'Thank you for repeating. Meanwhile, I have identified the problem: there was a miscommunication in the packaging process.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:3000,
-        loading: true,
-        photo: true,
-        content:'I will create a new order to be delivered within a day. Please hold on.'
-    });
-}).then(function(){
-    return botui.message.add({
-        delay:10000,
-        loading: true,
-        photo: true,
-        content:'I have processed your request. '
+        content:'I have processed your request and the issue is resolved.'
     });
 }).then(function(){
     sendcomplete();
     return botui.message.add({
-        delay:4000,
+        delay:3000,
         loading: true,
-        photo: true,
-        content:'Please contact me again if you need further assistance.'
+        content:'Please contact us again if you need further assistance. Bye.'
     });
+    
 });
 
 function sendcomplete(){
-    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2], "text4":response[3], "text5":response[4]}, "*");
+    window.parent.postMessage({"message": "completed","text1":response[0],"text2":response[1],"text3":response[2], "text4":response[3]}, "*");
 };
