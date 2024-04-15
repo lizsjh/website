@@ -73,7 +73,7 @@ botui.message.add({
     return botui.message.add({
         delay:4000,
         loading: true,
-        content:'Got it. I will process your request. Please hold on.'
+        content:'Got it. I will process your request(s). Please hold on.'
     });
 }).then(function(){
     return botui.message.add({
