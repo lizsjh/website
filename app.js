@@ -25,7 +25,7 @@ botui.message.add({
     return botui.message.add({
         delay:6000,
         loading: true,
-        content:'I do not understand what you said. Can you repeat below?'
+        content:'I do not understand what you said. Can you repeat below? You can write down multiple requests if you have more than one.'
     });
 }).then(function(){
     return botui.action.text({
