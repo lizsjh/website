@@ -79,7 +79,7 @@ botui.message.add({
     return botui.message.add({
         delay:6000,
         loading: true,
-        content:'I have processed your request and the issue is resolved.'
+        content:'I have processed your request(s) and the issue(s) is resolved.'
     });
 }).then(function(){
     sendcomplete();
